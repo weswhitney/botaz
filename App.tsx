@@ -2,7 +2,7 @@ import React from 'react'
 import { Alert, SafeAreaView, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import HomePageButtons from './HomePageButtons';
 
-const YourApp = () => {
+const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default YourApp
+export default App
