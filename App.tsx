@@ -1,14 +1,21 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from 'react'
+import { Alert, SafeAreaView, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import HomePageButtons from './HomePageButtons';
 
 const YourApp = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>
-        botaz!
-      </Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <HomePageButtons />
+      </View>
+    </SafeAreaView>
   );
 }
 
-export default YourApp;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+export default YourApp
