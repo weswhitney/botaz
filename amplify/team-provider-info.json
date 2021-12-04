@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-botaz-dev-204010-authRole",
+      "UnauthRoleArn": "arn:aws:iam::979673662712:role/amplify-botaz-dev-204010-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::979673662712:role/amplify-botaz-dev-204010-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-botaz-dev-204010-deployment",
+      "UnauthRoleName": "amplify-botaz-dev-204010-unauthRole",
+      "StackName": "amplify-botaz-dev-204010",
+      "StackId": "arn:aws:cloudformation:us-east-2:979673662712:stack/amplify-botaz-dev-204010/b8ddf790-53ea-11ec-8ed6-025ce0ab7462",
+      "AmplifyAppId": "d10m9sx6ndjrz7"
+    },
+    "categories": {
+      "auth": {
+        "botaz10dd1b06": {}
+      }
+    }
+  }
+}
