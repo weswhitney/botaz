@@ -6,6 +6,7 @@ import HomePageButtons from './HomePageButtons'
 import PostPairScreen from './PostPairScreen'
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react-native'
 Amplify.configure(awsconfig);
 
 const HomeScreen = () => {
@@ -35,4 +36,26 @@ const styles = StyleSheet.create({
   },
 })
 
-export default App
+const signUpConfig = {
+  header: 'Sign Up',
+  hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'email',
+      key: 'email',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    },
+    {
+      label: 'password',
+      key: 'password',
+      required: true,
+      displayOrder: 2,
+      type: 'string'
+    }
+  ]
+};
+
+export default withAuthenticator(App, { includeGreetings: true, signUpConfig, usernameAttributes: 'email' })
