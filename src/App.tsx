@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StyleSheet, View } from 'react-native'
 import HomePageButtons from './HomePageButtons'
 import PostPairScreen from './PostPairScreen'
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 const HomeScreen = () => {
   return (
