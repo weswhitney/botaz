@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Button, Text, TextInput, View } from 'react-native'
+import { Button, View } from 'react-native'
 import { useForm, Controller, FieldValues } from "react-hook-form";
 import {Picker} from '@react-native-picker/picker';
 
 const PostPairScreen = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm<FieldValues>();
-  const onSubmit = (data: any) => console.log(data);
+  const { setValue, control, handleSubmit, formState: { errors } } = useForm<FieldValues>();
+  const onSubmit = (data: any) => console.log('submit data************ ', data);
   const [shoeBrand, setShoeBrand] = useState()
   const [shoeSize, setShoeSize] = useState()
   const [shoeCondition, setShoeCondition] = useState()
@@ -20,17 +20,16 @@ const PostPairScreen = () => {
         render={() => (
           <Picker
               selectedValue={shoeBrand}
-              onValueChange={(itemValue, itemIndex) =>
-              setShoeBrand(itemValue)
-            }>
-            <Picker.Item label="Addidas" value="addidas" />
+              onValueChange={itemValue => setShoeBrand(itemValue)}
+            >
+            <Picker.Item label="Adidas" value="addidas" />
             <Picker.Item label="Puma" value="puma" />
             <Picker.Item label="Nike" value="nike" />
             <Picker.Item label="Under Armour" value="underArmour" />
             <Picker.Item label="Lotto" value="lotto" />
           </Picker>
-
         )}
+        {...setValue("brand", shoeBrand)}
         name="brand" 
       />
       <Controller
@@ -38,10 +37,10 @@ const PostPairScreen = () => {
         rules={{
          required: true,
         }}
-        render={() => (
+        render={({ field: { value } }) => (
           <Picker
               selectedValue={shoeSize}
-              onValueChange={(itemValue, itemIndex) =>
+              onValueChange={(itemValue) =>
               setShoeSize(itemValue)
             }>
             <Picker.Item label="2" value="2" />
@@ -52,6 +51,7 @@ const PostPairScreen = () => {
           </Picker>
 
         )}
+        {...setValue("size", shoeSize)}
         name="size" 
       />
       <Controller
@@ -59,24 +59,21 @@ const PostPairScreen = () => {
         rules={{
          required: true,
         }}
-        render={() => (
+        render={({ field: { value }}) => (
           <Picker
-              selectedValue={shoeCondition}
-              onValueChange={(itemValue, itemIndex) =>
-              setShoeCondition(itemValue)
-            }>
+            selectedValue={shoeCondition}
+            onValueChange={(itemValue) =>
+            setShoeCondition(itemValue)}
+          >
             <Picker.Item label="poor" value="poor" />
             <Picker.Item label="fair" value="fair" />
             <Picker.Item label="good" value="good" />
             <Picker.Item label="new" value="new" />
           </Picker>
-
         )}
+        {...setValue("condition", shoeCondition)}
         name="condition" 
       />
-      {console.log('shoeBrand', shoeBrand)}
-      {console.log('error ', errors)}
-      {/* {errors.brand && <Text>brand is required.</Text>} */}
 
       <Button title="Submit" onPress={handleSubmit(onSubmit)} />
     </View >
