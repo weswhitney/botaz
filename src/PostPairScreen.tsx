@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Button, View } from 'react-native'
-import { useForm, Controller, FieldValues } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import {Picker} from '@react-native-picker/picker';
 
 type ShoePostInputs = {
   brand: string;
   size: string;
   condition: string;
+  sport: string;
 }
 
 const PostPairScreen = () => {
@@ -37,6 +38,7 @@ const PostPairScreen = () => {
     if (shoeCondition) {
       setValue("condition", shoeCondition)
     }
+    setValue("sport", "soccer")
   }, [shoeBrand, shoeSize, shoeCondition])
 
   return (
