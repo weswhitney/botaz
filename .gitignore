@@ -79,4 +79,6 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+#added this manually
 amplify/team-provider-info.json
