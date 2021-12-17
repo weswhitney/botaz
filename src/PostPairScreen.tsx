@@ -18,6 +18,16 @@ const PostPairScreen = () => {
 
   const handleShoePostSubmit = async (data: any) => {
     console.log('data inside shoe post', data)
+    try {
+      const response = await fetch(
+        'http://localhost:3000/ping'
+      );
+      const json = await response.json();
+      console.log('the json', json)
+      return json;
+    } catch (error) {
+      console.error(error);
+    }
   }
   
   const onSubmit = async (data: any) => {
