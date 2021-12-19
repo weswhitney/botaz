@@ -59,6 +59,10 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
+
+#added this manually
+amplify/team-provider-info.json
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -80,5 +84,9 @@ amplifytools.xcconfig
 **.sample
 #amplify-do-not-edit-end
 
-#added this manually
-amplify/team-provider-info.json
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

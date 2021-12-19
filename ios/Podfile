@@ -12,7 +12,6 @@ target 'botaz' do
     :hermes_enabled => false
   )
 
-  pod 'RNCPicker', :path => '../node_modules/@react-native-picker/picker'
 
   target 'botazTests' do
     inherit! :complete

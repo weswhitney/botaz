@@ -17,17 +17,20 @@ const PostPairScreen = () => {
   const [shoeCondition, setShoeCondition] = useState<string | undefined>(undefined)
 
   const handleShoePostSubmit = async (data: any) => {
-    console.log('data inside shoe post', data)
-    try {
-      const response = await fetch(
-        'http://localhost:3000/ping'
-      );
-      const json = await response.json();
-      console.log('the json', json)
-      return json;
-    } catch (error) {
-      console.error(error);
-    }
+    fetch('http://localhost:3000/shoe-posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
   
   const onSubmit = async (data: any) => {
