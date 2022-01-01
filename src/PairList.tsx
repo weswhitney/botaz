@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 });
 
 
-const FlatListBasics = () => {
+const ShoePairList = () => {
   const [data, setData] = useState([]);
 
   const fetchShoePairs = async () => {
@@ -41,4 +41,4 @@ const FlatListBasics = () => {
   );
 }
 
-export default FlatListBasics;
+export default ShoePairList;
