@@ -7,6 +7,7 @@ import PostPairScreen from './PostPairScreen'
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native'
+import PairList from './PairList'
 Amplify.configure(awsconfig);
 
 const HomeScreen = () => {
@@ -25,6 +26,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{title: 'home'}} />
         <Stack.Screen name="PostPair" component={PostPairScreen} options={{title: 'swap'}} />
+        <Stack.Screen name="FindPair" component={PairList} options={{title: 'pairs'}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
