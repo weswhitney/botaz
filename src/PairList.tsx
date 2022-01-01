@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 });
 
 
-const ShoePairList = () => {
+const PairList = () => {
   const [data, setData] = useState([]);
 
   const fetchShoePairs = async () => {
@@ -41,4 +41,4 @@ const ShoePairList = () => {
   );
 }
 
-export default ShoePairList;
+export default PairList;
