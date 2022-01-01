@@ -4,7 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import {Picker} from '@react-native-picker/picker';
 
 type ShoePostInputs = {
-  brand: string;
+  brand_id: number;
   size: string;
   condition: string;
   sport: string;
@@ -12,7 +12,7 @@ type ShoePostInputs = {
 
 const PostPairScreen = () => {
   const { setValue, control, handleSubmit, formState: { errors } } = useForm<ShoePostInputs>({ mode: 'onChange' });
-  const [shoeBrand, setShoeBrand] = useState<string | undefined>(undefined)
+  const [shoeBrand, setShoeBrand] = useState<number | undefined>(undefined)
   const [shoeSize, setShoeSize] = useState<string | undefined>(undefined)
   const [shoeCondition, setShoeCondition] = useState<string | undefined>(undefined)
 
@@ -43,7 +43,7 @@ const PostPairScreen = () => {
 
   useEffect(() => {
     if (shoeBrand) {
-      setValue("brand", shoeBrand)
+      setValue("brand_id", shoeBrand)
     }
     if (shoeSize) {
       setValue("size", shoeSize)
@@ -63,14 +63,14 @@ const PostPairScreen = () => {
               selectedValue={shoeBrand}
               onValueChange={itemValue => setShoeBrand(itemValue)}
             >
-            <Picker.Item label="Adidas" value="adidas" />
-            <Picker.Item label="Puma" value="puma" />
-            <Picker.Item label="Nike" value="nike" />
+            <Picker.Item label="Adidas" value={2} />
+            <Picker.Item label="Puma" value={3} />
+            <Picker.Item label="Nike" value={1} />
             <Picker.Item label="Under Armour" value="underArmour" />
             <Picker.Item label="Lotto" value="lotto" />
           </Picker>
         )}
-        name="brand" 
+        name="brand_id" 
       />
       <Controller
         control={control}
