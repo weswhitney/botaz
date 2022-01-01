@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react'
-import { Alert, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 
 const HomePageButtons = () => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ const HomePageButtons = () => {
           <Text>post a pair</Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight onPress={() => Alert.alert('Find Button pressed')}>
+      <TouchableHighlight onPress={() => navigation.navigate('FindPair')}>
         <View style={styles.button}>
           <Text>find a pair</Text>
         </View>
