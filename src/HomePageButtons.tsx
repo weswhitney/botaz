@@ -1,34 +1,34 @@
-import { useNavigation } from '@react-navigation/core';
-import React from 'react'
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import {useNavigation} from '@react-navigation/core';
+import React from 'react';
+import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 
 const HomePageButtons = () => {
   const navigation = useNavigation();
 
   return (
     <>
-      <TouchableHighlight onPress={() => navigation.navigate('PostPair')}>
+      <TouchableHighlight onPress={() => navigation.navigate('CurrentAlerts')}>
         <View style={styles.button}>
-          <Text>post a pair</Text>
+          <Text>Current Alerts</Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight onPress={() => navigation.navigate('FindPair')}>
+      {/* <TouchableHighlight onPress={() => navigation.navigate('FindPair')}>
         <View style={styles.button}>
-          <Text>find a pair</Text>
+          <Text>Previous Alerts</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableHighlight> */}
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
-    alignItems: "center",
-    backgroundColor: "#9BA17B",
+    alignItems: 'center',
+    backgroundColor: '#9BA17B',
     padding: 15,
     margin: 10,
-    paddingHorizontal: 60
-  }
+    paddingHorizontal: 60,
+  },
 });
 
-export default HomePageButtons
+export default HomePageButtons;
